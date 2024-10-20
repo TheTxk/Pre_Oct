@@ -58,50 +58,24 @@ function displayCat() {
 
 
 //fixed cat-heart and cat-flower
-// Function to display the cat-heart.gif
+
 function displayCatHeart() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
-
-    // Get the container where the images will be displayed
+    // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-
-    // Create new Image elements for the cat-heart and cat-flowers
+    // Create a new Image element for the cat-heart
     var catHeartImage = new Image();
-    var catFlowersImage = new Image();
-
-    // Set the sources for the images
-    catHeartImage.src = 'cat-heart.gif';
-    catFlowersImage.src = 'cat-flowers.gif';
-
-    // Set alternative text for the images
-    catHeartImage.alt = 'Cat Heart';
-    catFlowersImage.alt = 'Cat Flowers';
-
-    // When both images are fully loaded, add them to the image container
-    var imagesLoaded = 0;
-
-    function imageLoaded() {
-        imagesLoaded++;
-        if (imagesLoaded === 2) {
-            // Append images to the image container
-            imageContainer.appendChild(catHeartImage);
-            imageContainer.appendChild(catFlowersImage);
-
-            // Add the text "Happy Woman Day, Mom"
-            var textContainer = document.getElementById('text-container');
-            var message = document.createElement('div');
-            message.id = 'message';
-            message.innerText = 'Happy Woman Day, Mom';
-            textContainer.appendChild(message);
-
-            // Hide the options container
-            document.getElementById('options').style.display = 'none';
-        }
-    }
-
-    catHeartImage.onload = imageLoaded;
-    catFlowersImage.onload = imageLoaded;
+    // Set the source (file path) for the cat-heart image
+    catHeartImage.src = 'cat-flowers.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    // Set alternative text for the image (for accessibility)
+    catHeartImage.alt = 'Car flower';
+    // When the cat-heart image is fully loaded, add it to the image container
+    catHeartImage.onload = function() {
+        imageContainer.appendChild(catHeartImage);
+        // Hide the options container
+        document.getElementById('options').style.display = 'none';
+    };
 }
 
 
