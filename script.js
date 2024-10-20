@@ -69,12 +69,26 @@ function displayCatHeart() {
     // Set the source (file path) for the cat-heart image
     catHeartImage.src = 'cat-flowers.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
     // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Car flower';
+    catHeartImage.alt = 'Car gives flowers';
     // When the cat-heart image is fully loaded, add it to the image container
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
+
+        // Create a new div for the message
+        var messageDiv = document.createElement('div');
+        messageDiv.id = 'message';
+        messageDiv.innerText = 'Happy Woman Day, Mom!';
+        // Style the messageDiv
+        messageDiv.style.textAlign = 'center';
+        messageDiv.style.fontSize = '24px';
+        messageDiv.style.marginTop = '20px';
+        messageDiv.style.fontFamily = "'Sacramento', cursive";
+
+        // Append the messageDiv to the text-container
+        var textContainer = document.getElementById('text-container');
+        textContainer.appendChild(messageDiv);
     };
 }
 
